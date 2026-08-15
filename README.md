@@ -179,22 +179,23 @@ voicerag/
 
 ## 📈 Development Plan
 
-* [ ] Set up project structure
-* [ ] Download/load dataset
-* [ ] Implement speech-to-text
-* [ ] Build initial ingestion pipeline
-* [ ] Implement multiple chunking strategies
-* [ ] Set up vector database
-* [ ] Implement retrieval
-* [ ] Implement answer generation
-* [ ] Build model harness
-* [ ] Add guardrails
-* [ ] Add latency benchmarking
-* [ ] Optimize for <200ms
-* [ ] Build API
-* [ ] Create live demo
-* [ ] Record process video
-* [ ] Record demo video
+[✓] Learned RAG architecture
+[✓] Learned embeddings
+[✓] Created FastAPI backend
+[✓] Created project structure
+[✓] Added health endpoint
+[✓] Added structured request/response schemas
+[✓] Created RAG orchestrator skeleton
+
+[ ] Connect dataset
+[ ] Implement vector database
+[ ] Implement retrieval
+[ ] Add LLM
+[ ] Add STT
+[ ] Add guardrails
+[ ] Add retries/error handling
+[ ] Benchmark latency
+[ ] Integrate frontend
 
 ## 👥 Team
 
