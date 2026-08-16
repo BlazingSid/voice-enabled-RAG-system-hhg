@@ -1,16 +1,35 @@
+from app.services.llm import LLM
+from app.services.retriever import Retriever
+
+
 class RAGOrchestrator:
 
-    def __init__(self):
-        pass
+    def __init__(
+        self,
+        retriever: Retriever,
+        llm: LLM,
+    ):
+        self.retriever = retriever
+        self.llm = llm
 
-    async def run(self, query: str):
-        # 1. Validate query
-        # 2. Retrieve context
-        # 3. Generate answer
-        # 4. Validate answer
-        # 5. Return structured result
+    async def run(self, query: str) -> dict:
+        query = query.strip()
+
+        if not query:
+            raise ValueError("Query cannot be empty.")
+
+        context = await self.retriever.search(
+            query,
+            top_k=5,
+        )
+
+        answer = await self.llm.generate(
+            query,
+            context,
+        )
 
         return {
-            "answer": "Pipeline not connected yet.",
-            "grounded": False
+            "answer": answer,
+            "grounded": bool(context),
+            "sources": context,
         }
